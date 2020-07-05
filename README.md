@@ -1,8 +1,12 @@
-# raspberry
-A GitHub repo to manage my raspberry pi passion
+# Raspbery Pi Setup
+This is a GitHub repo to manage my raspberry pi passion. About every six months I
+pick up my Raspberry Pi, want to rebuild it from scratch and messaround with it. 
+This repo is dedicated to expediting that setup.  There are set of things that
+I have learned over the years to increas my productivity so I try to bake this into the setup
+so that I can be up and running as soon as possible.
 
 ## Initial Setup
-Download [NOOBS](https://www.raspberrypi.org/downloads/noobs/) from and you just need
+Download [NOOBS](https://www.raspberrypi.org/downloads/noobs/) and you just need
 to unzip this file to a newly formatted SD card.  Make sure the space for the SD Card
 is fully allocation to a single partition otherwise you may not get the full use of the
 card.  NOOBS will allocate the drive upon installation.
@@ -64,21 +68,50 @@ $ systemctl status xrdp
 ```
 
 ### Bash Setup
+It's probably best to keep the .bashrc in its original form and just source another
+file.  This helps with future upgrades and then you have all your customizations 
+in one spot.
+
+If you don't have a `~/.bash_profile`, then create one.
+
 Add this to your .bash_profile so that all terminal windows behave the same.
 ```
-# Put any customization is the .bashrc file and just source it here if you logon.
+# Load the .bashrc file if you logon remotly from SSH.
 if [ -f $HOME/.bashrc ]; then
         source $HOME/.bashrc
 fi
 ```
 
-### Add Scripts to your path
-In the .bashrc_local add the following
+At the bottom of the `.bashrc` add the following line and this will enable us to keep 
+all our custom bash behavior in one file.
+
 ```
-export PATH=~Development/Scripts:$PATH
+source .bashrc_local
 ```
 
-TODO
-Document the setting up of aliases. GiT Push/Pull, etc.
-How to define a set of scripts for the path
-Install FileZilla on the host computer to transfer files.
+### .bashrc_local
+This file is full of the customization that we want to add to bash.  Here are some examples
+```
+# Put any Scripts that we want to run in our system path.
+export PATH=~/Development/Scripts:$PATH
+
+# Add the Git Branch to the Prompt
+# Show current git branch in command line
+# https://unix.stackexchange.com/questions/124407/what-color-codes-can-i-use-in-my-ps1-prompt
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+export PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
+
+# All my really cool aliases
+alias gs='echo "git status" && git status'
+alias gpl='echo "git pull" && git pull'
+alias gps='echo "git push" && git push origin'
+alias gc='echo "git commit w/message" && git commit -m $1'
+alias gr='echo "git revert" && git reset --soft HEAD~1'
+
+alias sa='ssh-add ~/.ssh/id_rsa'
+```
+
+### File Transfer
+Install FileZilla on the host computer to transfer files to the Raspberry Pi.
