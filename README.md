@@ -5,6 +5,11 @@ This repo is dedicated to expediting that setup.  There are set of things that
 I have learned over the years to increas my productivity so I try to bake this into the setup
 so that I can be up and running as soon as possible.
 
+## Guide
+* [Initial Setup](#initial-setup)
+* [Pythone](#
+
+
 ## Initial Setup
 Download [NOOBS](https://www.raspberrypi.org/downloads/noobs/) and you just need
 to unzip this file to a newly formatted SD card.  Make sure the space for the SD Card
@@ -115,3 +120,6 @@ alias sa='ssh-add ~/.ssh/id_rsa'
 
 ### File Transfer
 Install FileZilla on the host computer to transfer files to the Raspberry Pi.
+
+## TODO
+Document how to change the symlink for python to python3
