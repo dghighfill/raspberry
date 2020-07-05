@@ -8,7 +8,7 @@ so that I can be up and running as soon as possible.
 ## Guide
 * [Initial Setup](#initial-setup)
 * [Python](python_setup/README.md)
-* [Git Setup](/git_setup/README.md)
+* [Git Setup](git_setup/README.md)
 
 
 ## Initial Setup
