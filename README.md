@@ -97,6 +97,11 @@ source .bashrc_local
 
 ### .bashrc_local
 This file is full of the customization that we want to add to bash.  Here are some examples
+
+NOTE: You may need to delete the new line character and redo it as copying and pasting from 
+GitHub might get you in to trouble.  Just delete the new list to pull up the lower line then
+hit the Enter to add a new line under Unix.
+
 ```
 # Put any Scripts that we want to run in our system path.
 export PATH=~/Development/Scripts:$PATH
