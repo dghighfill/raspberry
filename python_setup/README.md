@@ -15,7 +15,7 @@ lrwxrwxrwx 1 root root 7 Jul  5 13:38 python -> python2
 2. Delete the old python link
 `sudo rm python`
 
-3. Creat e new python link s to python3.
+3. Create new python symbolic link to python3.
 `sudo ln s python3 python`
 
 Now run the command again.

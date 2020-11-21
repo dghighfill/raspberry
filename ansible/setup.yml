@@ -1,0 +1,7 @@
+---
+  - name : Setup my Raspberry Pi
+    hosts: localhost
+    connection: local
+
+    roles:
+      - common 

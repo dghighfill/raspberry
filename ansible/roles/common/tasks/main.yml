@@ -1,0 +1,2 @@
+- debug:
+    msg: "This is a debug message to make sure it works"
