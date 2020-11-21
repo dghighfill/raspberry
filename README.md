@@ -72,6 +72,8 @@ Restart pi and enter the following to make sure its running as a service
 ```
 $ systemctl status xrdp
 ```
+### Develop with Remote SSH with VS Code.
+Install Remote - SSH and Remote -SSH: Editing plugins in VS Code.  Then you can connect from Windows VSCode directly into the Raspberry Pi and edit the files.
 
 ### Bash Setup
 It's probably best to keep the .bashrc in its original form and just source another
