@@ -1,7 +1,13 @@
 ---
-  - name : Setup my Raspberry Pi
-    hosts: localhost
-    connection: local
+- name : Setup my Raspberry Pi
+  hosts: localhost
+  # This needs to be here to prevent the "[Errno 2] No such file or directory" error
+  gather_facts: false
 
-    roles:
-      - common 
+  tasks:
+  - name: Print a debug message
+    debug:
+      msg: "This is a debug message to make sure it works"
+
+  roles:
+  - common

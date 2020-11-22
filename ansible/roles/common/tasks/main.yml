@@ -1,2 +1,9 @@
-- debug:
-    msg: "This is a debug message to make sure it works"
+---
+- name: Setup Python as Python 3
+  file: 
+    src: python3.7
+    dest: /usr/bin/python3 
+    state: link
+    owner: root
+    group: root
+  become: yes
