@@ -12,7 +12,11 @@ $ ssh-add ~/.ssh/id_rsa
 ```
 
 upload to github
+
 chmod the private key to 600
+
+`chmod 600 id_rsa`
+
 set the origin
 ```
 pi@raspberrypi:~/Development/raspberry (master) $ git push
