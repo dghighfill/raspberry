@@ -9,6 +9,7 @@ so that I can be up and running as soon as possible.
 * [Initial Setup](#initial-setup)
 * [Python](python_setup/README.md)
 * [Git Setup](git_setup/README.md)
+* [SSH Setup](#ssh-setup)
 
 
 ## Initial Setup
@@ -72,8 +73,6 @@ Restart pi and enter the following to make sure its running as a service
 ```
 $ systemctl status xrdp
 ```
-### Develop with Remote SSH with VS Code.
-Install Remote - SSH and Remote -SSH: Editing plugins in VS Code.  Then you can connect from Windows VSCode directly into the Raspberry Pi and edit the files.
 
 ### Bash Setup
 It's probably best to keep the .bashrc in its original form and just source another
@@ -129,5 +128,10 @@ alias sa='ssh-add ~/.ssh/id_rsa'
 ### File Transfer
 Install FileZilla on the host computer to transfer files to the Raspberry Pi.
 
-## TODO
-Document how to change the symlink for python to python3
+## SSH Setup
+On your host machine your going to need to create a SSH Key Pair for your PI so that you're not prompted for user id and pasword each time.  Create the key pair and copy the key `ssh-copy-id` which will copy the key to the `authorized_keys` in the .ssh directory on the pi.  
+
+Here's a good article on the process. https://linuxize.com/post/how-to-setup-passwordless-ssh-login/
+
+### Develop with Remote SSH with VS Code.
+Install Remote - SSH and Remote -SSH: Editing plugins in VS Code.  Then you can connect from Windows VSCode directly into the Raspberry Pi and edit the files.
