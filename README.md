@@ -1,9 +1,5 @@
 # Raspbery Pi Setup
-This is a GitHub repo to manage my raspberry pi passion. About every six months I
-pick up my Raspberry Pi, want to rebuild it from scratch and messaround with it. 
-This repo is dedicated to expediting that setup.  There are set of things that
-I have learned over the years to increas my productivity so I try to bake this into the setup
-so that I can be up and running as soon as possible.
+This is a GitHub repo to manage my raspberry pi passion. About every six months I pick up my Raspberry Pi, want to rebuild it from scratch and mess around with it. This repo is dedicated to expediting that setup.  There are set of things that I have learned over the years to increase my productivity so I try to bake this into the setup so that I can be up and running as soon as possible.
 
 ## Guide
 * [Initial Setup](#initial-setup)

@@ -8,4 +8,8 @@
     group: root
   become: yes
 
-
+- name: Install VSCode
+  apt:
+    name: code
+    state: latest
+  become: yes
